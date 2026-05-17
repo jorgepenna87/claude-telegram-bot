@@ -206,6 +206,36 @@ npx skills add kepano/obsidian-skills
 
 Substitui o `WebFetch` padrão: extrai markdown limpo de URLs (remove menu, propaganda, banners), economiza tokens. Vem junto com o `obsidian-skills` acima.
 
+### watch — Claude assiste vídeo do YouTube e responde sobre
+
+Você manda um link do YouTube, e o Claude baixa o vídeo, extrai frames, transcreve o áudio (caption nativa ou Whisper API), e te explica o conteúdo / responde perguntas específicas sobre o vídeo. Útil pra assistir tutoriais sem ver, conferir aulas, resumir palestras.
+
+Instalação via plugin marketplace do Claude Code:
+
+```
+/plugin install claude-video/watch
+```
+
+(Dentro de qualquer sessão Claude, digite isso. Repo: https://github.com/bradautomates/claude-video)
+
+Depois é só falar:
+- "/watch https://youtu.be/xxx" → resumo do vídeo
+- "/watch https://youtu.be/xxx em que minuto ele fala sobre X?" → resposta direcionada
+
+Precisa de uma chave Groq Whisper (a mesma que você já configurou pro bot — `GROQ_API_KEY` no `.env` do watch).
+
+### Printing Press — gerar CLI pra qualquer app sem API pública
+
+Tem um app/site que você usa e queria automatizar mas ele não tem API? O Printing Press gera um CLI completo (em Go) a partir de um HAR do navegador (export da aba Network do Chrome). Cria CLI + skill + opcionalmente MCP server.
+
+```bash
+npx skills add mvanhorn/cli-printing-press
+```
+
+Casos de uso: Notion, MyFitnessPal, Google Photos, sistema interno do trabalho... qualquer coisa que tenha web app mas não tenha API documentada. Já tem ~80 CLIs prontos da comunidade em `mvanhorn/printing-press-library`.
+
+Site: https://printingpress.dev
+
 ### Como ver tudo que tem instalado
 
 Dentro de qualquer sessão Claude Code, digite `/plugin` pra ver o que está disponível. As skills ficam em `.agents/skills/` na pasta do seu projeto.
