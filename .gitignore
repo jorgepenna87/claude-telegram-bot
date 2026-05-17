@@ -1,0 +1,11 @@
+CLAUDE.md
+bot/.env
+bot/sessions/*.session
+bot/sessions/*.active
+Inbox/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
