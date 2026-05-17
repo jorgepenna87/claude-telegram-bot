@@ -167,6 +167,51 @@ O bot pipa pro Claude Code, que lê teu `CLAUDE.md` e responde no tom que você 
 
 ---
 
+## Bônus — Skills recomendadas pra instalar junto
+
+Uma "skill" no Claude Code é um pacote de instruções + comandos que muda o comportamento dele em certas tarefas. Algumas valem a pena instalar de cara, antes mesmo de personalizar o bot. Rode estes comandos **na raiz deste repo** (mesmo lugar do seu `CLAUDE.md`):
+
+### Impeccable — front-end com cara profissional
+
+Se você (ou seu bot) vai criar/editar páginas web, dashboards, landings, qualquer coisa visual — instale **Impeccable**. Ela ensina o Claude Code disciplina de design (tipografia, hierarquia, cor, espaço) e evita aquele visual genérico de "feito por IA".
+
+```bash
+npx skills add pbakaus/impeccable
+```
+
+Depois, dentro de qualquer sessão Claude (ou via Telegram pelo bot), você pode falar:
+- "Cria uma landing page pra X" → o Claude vai usar princípios da Impeccable automaticamente
+- "Aplica /impeccable critique no meu site" → ele revisa e aponta problemas
+- "Roda /impeccable craft" → ele te entrevista e gera o design do zero
+
+Documentação: https://impeccable.style
+
+### Karpathy Guidelines — Claude escreve código melhor
+
+Um arquivo CLAUDE.md de 65 linhas baseado em observações do Andrej Karpathy sobre erros comuns de LLM em código. Vale instalar em qualquer projeto.
+
+```bash
+npx skills add forrestchang/andrej-karpathy-skills
+```
+
+### Obsidian Skills — se você usa Obsidian
+
+Se você mantém notas no Obsidian, esta skill conecta o Claude direto ao seu vault (wikilinks, callouts, JSON Canvas, CLI). Vem com várias mini-skills.
+
+```bash
+npx skills add kepano/obsidian-skills
+```
+
+### Defuddle — lê páginas web sem o lixo
+
+Substitui o `WebFetch` padrão: extrai markdown limpo de URLs (remove menu, propaganda, banners), economiza tokens. Vem junto com o `obsidian-skills` acima.
+
+### Como ver tudo que tem instalado
+
+Dentro de qualquer sessão Claude Code, digite `/plugin` pra ver o que está disponível. As skills ficam em `.agents/skills/` na pasta do seu projeto.
+
+---
+
 ## Como manter o bot rodando 24/7
 
 ### Windows — Task Scheduler
